@@ -9,7 +9,7 @@ const task = async (name, delay) => {
 };
 
 (async () => {
-  await queue.add(() => task("A", 1000));
+  await queue.add(() => task("A", 1000)); // adds task A with 10000ms in queue  The await keyword ensures that each queue.add() call completes before moving to the next one
   await queue.add(() => task("B", 500));
   await queue.add(() => task("C", 300));
   await queue.add(() => task("D", 700));
